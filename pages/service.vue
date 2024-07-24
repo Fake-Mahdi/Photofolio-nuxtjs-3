@@ -242,7 +242,7 @@ body
          padding: 20px;
          position: relative;
          width: 100%;
-         height: 0%;
+         height: 100%;
          background-color: rgb(17, 16, 16);
          z-index: 1;
          transition: 0.5s ease-in-out;
