@@ -1,7 +1,5 @@
 <template>
-  <div class="hello">
-    <Navbar />
-        
+  <div> 
         <section style="margin-top: 90px;" class="description">
         <div class="container">
             <div class="text-center"><p style="font-family: 'Cardo', sans-serif; font-size: 60px; color: white;" >About</p></div>

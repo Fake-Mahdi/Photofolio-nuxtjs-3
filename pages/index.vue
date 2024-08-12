@@ -1,5 +1,5 @@
 <template>
-  <div class="hello">
+  <div>
     <transition name="fade">
       <Navbar/>
        </transition>
