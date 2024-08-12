@@ -30,6 +30,18 @@
 <script>
 export default {
   name: 'Navbar',
+  mounted() {
+    if (process.client) {
+      $(document).ready(function () {
+        $(document).click(function (event) {
+          var target = $(event.target);
+          if (!target.closest('.navbar').length) {
+            $('.navbar-collapse').collapse('hide');
+          }
+        });
+      });
+    }
+  }
   
 }
 </script>

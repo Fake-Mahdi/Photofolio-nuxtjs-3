@@ -1,8 +1,5 @@
 <template>
   <div>
-    <transition name="fade">
-      <Navbar/>
-       </transition>
         <section style="margin-top: 100px;">
             <div class="container">
                     <div class="text-center">
