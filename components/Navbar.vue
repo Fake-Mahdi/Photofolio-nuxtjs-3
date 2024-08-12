@@ -31,18 +31,39 @@
 export default {
   name: 'Navbar',
   mounted() {
-    if (process.client) {
-      $(document).ready(function () {
-        $(document).click(function (event) {
-          var target = $(event.target);
-          if (!target.closest('.navbar').length) {
-            $('.navbar-collapse').collapse('hide');
-          }
-        });
+    const navbar = document.querySelector('.navbar');
+    const navbarCollapse = document.querySelector('.navbar-collapse');
+
+    // Function to collapse the navbar
+    const collapseNavbar = () => {
+      if (navbarCollapse && navbarCollapse.classList.contains('in')) {
+        $(navbarCollapse).collapse('hide'); // Use Bootstrap's collapse method to hide
+      }
+    };
+
+    // Handle click outside the navbar
+    document.addEventListener('click', (event) => {
+      if (navbar && navbarCollapse && !navbar.contains(event.target)) {
+        collapseNavbar();
+      }
+    });
+
+    // Handle the toggle button click event
+    const toggleButton = document.querySelector('.navbar-toggle');
+    if (toggleButton) {
+      toggleButton.addEventListener('click', () => {
+        $(navbarCollapse).collapse('toggle'); // Use Bootstrap's collapse method to toggle
       });
     }
+
+    // Handle click on navbar links
+    const navbarLinks = document.querySelectorAll('.nav a');
+    navbarLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        collapseNavbar(); // Collapse the navbar when a link is clicked
+      });
+    });
   }
-  
 }
 </script>
 
