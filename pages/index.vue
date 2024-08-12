@@ -1,8 +1,8 @@
 <template>
   <div class="hello">
-    
+    <transition name="fade">
       <Navbar/>
-
+       </transition>
         <section style="margin-top: 100px;">
             <div class="container">
                     <div class="text-center">
@@ -18,6 +18,8 @@
         </section>
 
         <ImageList />
+
+        
   </div>
 </template>
 
@@ -31,6 +33,15 @@ export default {
 * {
   padding: 0;
   margin: 0;
+}
+.page-enter-active,
+.page-leave-active {
+  transition: all 0.8s;
+}
+.page-enter-from,
+.page-leave-to {
+  opacity: 0;
+  filter: blur(1rem);
 }
 body {
   background-color: black;
